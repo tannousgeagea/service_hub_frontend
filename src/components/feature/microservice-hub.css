@@ -1,0 +1,97 @@
+.microservice-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.microservice-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.microservice-card {
+    background: #dddddd;
+    border: 1px solid #dddddd82;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    margin: auto;
+}
+
+.microservice-card:hover {
+    transform: scale(1.05);
+}
+
+.microservice-card h3 {
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+}
+
+.microservice-card p {
+    margin: 10px 0;
+    font: 1em sans-serif;
+}
+
+
+.microservice-info-section-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.info-section {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.info-icon {
+    margin-right: 10px;
+    max-width: 12px;
+    height: auto; /* Fixed height for images */
+}
+
+/* Tooltip styling */
+.microservice-tooltip {
+    position: absolute;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+    width: 250px;
+}
+
+.info-section:hover .microservice-tooltip {
+    display: block;
+}
+
+.microservice-tooltip p {
+    margin: 5px 0;
+    font-size: 0.5em;
+    color: #555;
+}
+
+.microservice-tooltip .service-id {
+    font-weight: bold;
+    color: #0011ff;
+}
+
+.microservice-tooltip .service-description {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666666;
+}

@@ -1,0 +1,162 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    align-content: center;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 40px;
+    width: 800px;
+    min-height: 800px;
+    margin: auto;
+    z-index: 10;
+}
+
+
+.service-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    transition: transform 0.7s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+}
+
+.service-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.service-header {
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    border-radius: 6px;
+    justify-content: space-between;
+    height: auto;
+    flex-direction: column;
+}
+
+.info-section-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.info-section {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.info-icon {
+    margin-right: 10px;
+    max-width: 14px;
+    height: auto; /* Fixed height for images */
+}
+
+.section-header-title {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    border-radius: 6px;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.service-header-title h3 {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 0.9em;
+    border-radius: 3px;
+    justify-content: space-between;
+    color: #333;
+}
+
+.drop-down-icon-section {
+    display: inline;
+    font-size: 1.2rem;   
+}
+
+.drop-down-icon {
+    width: 14px;
+    height: auto;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+    width: 350px;
+}
+
+.info-section:hover .tooltip {
+    display: block;
+}
+
+.tooltip p {
+    margin: 5px 0;
+    font-size: 0.8em;
+    color: #555;
+}
+
+.tooltip .service-id {
+    font-weight: bold;
+    color: #0011ff;
+}
+
+.tooltip .service-description {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666666be;
+}
+
+
+.service-content-container {
+    /* overflow: hidden; */
+    transition: all 0.5s ease-in-out;
+}
+
+.service-content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
