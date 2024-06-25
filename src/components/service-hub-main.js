@@ -61,7 +61,7 @@ const ServiceHubMain = () => {
                             <div className='iframe-container-button'>
                                 <button onClick={() => clearLink()}>clear</button>
                             </div>
-                            <iframe src={iframeUrl} title="Service Content" width="100%" height="600px"></iframe>
+                            <iframe src={iframeUrl} title="Service Content"></iframe>
                         </div>
                     ) : (
                         <span>no service was selected yet</span>

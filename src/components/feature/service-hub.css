@@ -25,6 +25,24 @@
 }
 
 
+.container-header {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    padding-left: 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.66);
+    border-radius: 1px;
+    justify-content: flex-start;
+
+}
+
+.container-header h3 {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-left: 5px;
+}
+
 .service-section {
     background-color: #ffffff;
     border: 1px solid #ddd;

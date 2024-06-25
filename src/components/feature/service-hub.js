@@ -31,6 +31,9 @@ const ServiceHub = ({ data , handleLinkClick }) => {
     return (
         <div className='main-container'>
             <div className="container">
+                <div className='container-header'>
+                    <h3>Services Running at {data.plant_name}</h3>
+                </div>
                 {services.map((service) => (
                     <div key={service.service_id} className="service-section">
 
