@@ -4,10 +4,12 @@ import useFetchData from '../hooks/use-fetch-data';
 import Filter from './ui/filter';
 import ServiceHub from './feature/service-hub';
 import './service-hub-main.css';
-import NetworkLogo from '../assets/icons/network.png'
+import NetworkLogo from '../assets/icons/network.png';
 import Footer from './common/footer';
-import addButton from '../assets/icons/add.png'
+import addButton from '../assets/icons/add.png';
 import Modal from './ui/modal';
+import TextLabel from './ui/text-label';
+import AddFormTemplate from './feature/add-form-template';
 
 const ServiceHubMain = () => {
     const [selectedPlant, setSelectedPlant] = useState('nan');
@@ -30,6 +32,8 @@ const ServiceHubMain = () => {
     const clearLink = () => {
         setIframeUrl('')
     }
+
+    const entries = ['Plant ID', 'Plant Name ', 'Plant Location', 'Additional Info']
 
     return (
         <div>
@@ -55,7 +59,15 @@ const ServiceHubMain = () => {
                 </div>
             </div>
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <Modal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+                children={
+                    <AddFormTemplate 
+                        entries={entries}
+                    />
+                }
+                >
             </Modal>
 
             <div className='main-container'>
