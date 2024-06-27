@@ -6,12 +6,15 @@ import ServiceHub from './feature/service-hub';
 import './service-hub-main.css';
 import NetworkLogo from '../assets/icons/network.png'
 import Footer from './common/footer';
+import addButton from '../assets/icons/add.png'
+import Modal from './ui/modal';
 
 const ServiceHubMain = () => {
     const [selectedPlant, setSelectedPlant] = useState('nan');
     const { data: plants, loading: loadingPlants, error: errorPlants } = useFetchData('/api/v1/plant/metadata');
     const { data: plantData, loading: loadingServices, error: errorServices } = useFetchData(`/api/v1/plant/${selectedPlant}`);
     const [iframeUrl, setIframeUrl] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     if (loadingPlants || loadingServices) return <p>Loading...</p>;
     if (errorPlants || errorServices) return <p>Error loading data</p>;
@@ -44,7 +47,16 @@ const ServiceHubMain = () => {
                     filter_value={selectedPlant}
                     onFilterChange={setSelectedPlant}
                 />
+
+                <div className='add-button' onClick={() => setIsModalOpen(true)}>
+                    <img src={addButton} alt="Button icon" className="add-button-icon"/>
+                    <span>Add new plant</span>
+
+                </div>
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            </Modal>
 
             <div className='main-container'>
 
