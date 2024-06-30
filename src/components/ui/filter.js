@@ -12,7 +12,7 @@ const Filter = ({ data, filter_value, onFilterChange }) => {
                 value={filter_value}
                 onChange={e => onFilterChange(e.target.value)}
             >
-                <option value="">select</option>
+                <option value="">select plant_id</option>
                 {data.map(item => (
                     <option key={item.plant_id} value={item.plant_id}>
                         {item.plant_name}

@@ -31,9 +31,16 @@ const ServiceHub = ({ data , handleLinkClick }) => {
     return (
         <div className='main-container'>
             <div className="container">
-                <div className='container-header'>
-                    <h3>Services Running at {data.plant_name}</h3>
-                </div>
+                {services.length === 0 ? (
+                    <span style={{ color: 'red', fontStyle: 'italic', fontWeight: 'bold', fontSize: '1.2em'}}>Please select a plant ID</span>
+                ) : (
+                    <div className='container-header'>
+                        <h3>Services Running at {data.plant_name}</h3>
+                    </div>
+                )}
+
+
+                {/* {} */}
                 {services.map((service) => (
                     <div key={service.service_id} className="service-section">
 

@@ -8,8 +8,9 @@ import NetworkLogo from '../assets/icons/network.png';
 import Footer from './common/footer';
 import addButton from '../assets/icons/add.png';
 import Modal from './ui/modal';
-import TextLabel from './ui/text-label';
-import AddFormTemplate from './feature/add-form-template';
+// import AddFormTemplate from './ui/add-form-template';
+// import useUploadData from '../hooks/use-upload-data';
+import AddPlantWrapper from './feature/add-plant-form';
 
 const ServiceHubMain = () => {
     const [selectedPlant, setSelectedPlant] = useState('nan');
@@ -33,7 +34,10 @@ const ServiceHubMain = () => {
         setIframeUrl('')
     }
 
-    const entries = ['Plant ID', 'Plant Name ', 'Plant Location', 'Additional Info']
+    const onSuccess = () => {
+        console.log('Success')
+        setIsModalOpen(false)
+    }
 
     return (
         <div>
@@ -63,15 +67,14 @@ const ServiceHubMain = () => {
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
                 children={
-                    <AddFormTemplate 
-                        entries={entries}
+                    <AddPlantWrapper 
+                        onSuccess={onSuccess}
                     />
                 }
                 >
             </Modal>
 
             <div className='main-container'>
-
                 <div className='service-container'>
                     <ServiceHub 
                         data={plantData}
@@ -88,7 +91,7 @@ const ServiceHubMain = () => {
                             <iframe src={iframeUrl} title="Service Content"></iframe>
                         </div>
                     ) : (
-                        <span>no service was selected yet</span>
+                        <span style={{ color: 'red', fontStyle: 'italic', fontWeight: 'bold', fontSize: '1.2em'}}>no service was selected yet</span>
                     )
                     }
                     
